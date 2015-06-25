@@ -15,7 +15,7 @@ module.exports = (grunt) ->
             gruntfile: 'Gruntfile.coffee'
             # generalize the module information for banner output
             banner: '/**\n' +
-                ' * NGS Project: <%= pkg.name %> - v<%= pkg.version %>\n' +
+                ' * <%= pkg.name %> - v<%= pkg.version %>\n' +
                 ' * Description: <%= pkg.description %>\n' +
                 ' * Date Built: <%= grunt.template.today("yyyy-mm-dd") %>\n' +
                 ' * Copyright (c) <%= grunt.template.today("yyyy") %>' +

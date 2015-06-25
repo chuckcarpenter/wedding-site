@@ -5,7 +5,7 @@ module.exports =
         options:
             open: true
             keepalive: true
-            hostname: 'dev.nationalgeographic.com'
+            hostname: 'dev.chuckandsarah.us'
             livereload: 35729
             port: 9000
             base: [
