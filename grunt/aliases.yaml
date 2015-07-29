@@ -2,16 +2,11 @@ default:
   - 'build'
 
 build:
-  - 'clean'
-  - 'jshint'
-  - 'karma:unit'
-  - 'uglify'
-
-dev:
   # - 'clean'
   # - 'jshint'
-  # - 'karma:unit'
-  # - 'browserify:dev'
-  # - 'replace:derequire'
+  - 'htmlbuild'
+
+dev:
+  # - 'build'
   - 'connect'
   # - 'watch'

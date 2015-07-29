@@ -25,9 +25,9 @@ Thumbs.db
 
 dist
 node_modules
-bower_components
 .tmp
 old
+reference
 
 # Ignore Compass Cache
 .sass-cache
