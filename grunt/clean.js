@@ -1,6 +1,6 @@
 module.exports = {
     // clear out any unneccessary files
     build: {
-        src: './*.html'
+        src: [ './*.html', '.tmp/' ]
     }
 };

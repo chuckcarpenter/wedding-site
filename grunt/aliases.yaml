@@ -2,11 +2,13 @@ default:
   - 'build'
 
 build:
-  # - 'clean'
+  - 'clean'
   # - 'jshint'
+  - 'concat'
   - 'htmlbuild'
 
 dev:
-  # - 'build'
-  - 'connect'
-  # - 'watch'
+  - 'build'
+  # - 'connect'
+  - 'browserSync'
+  - 'watch'

@@ -1,30 +1,29 @@
 module.exports = {
+    prepare: {
+        src: 'templates/layout/*.html',
+        dest: '.tmp/',
+        options: {
+            relative: false,
+            scripts: {
+                libs: './js/libs.js'
+            },
+            styles: {
+                main: './css/main.css'
+            }
+        }
+    },
     dist: {
-        src: './templates/*.html',
+        src: 'templates/*.html',
         dest: './',
         options: {
             beautify: true,
-            relative: true,
-            // scripts: {
-            //     bundle: [
-            //         '<%= fixturesPath %>/scripts/*.js',
-            //         '!**/main.js',
-            //     ],
-            //     main: '<%= fixturesPath %>/scripts/main.js'
-            // },
-            // styles: {
-            //     bundle: [
-            //         '<%= fixturesPath %>/css/libs.css',
-            //         '<%= fixturesPath %>/css/dev.css'
-            //     ],
-            //     test: '<%= fixturesPath %>/css/inline.css'
-            // },
+            relative: false,
             sections: {
                 // templates: './templates/**/*.html',
                 layout: {
-                    head: './templates/layout/head.html',
-                    nav: './templates/layout/nav.html',
-                    footer: './templates/layout/footer.html'
+                    head: '.tmp/head.html',
+                    nav: '.tmp/nav.html',
+                    footer: '.tmp/footer.html'
                 }
             },
         }
