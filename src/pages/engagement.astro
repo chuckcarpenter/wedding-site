@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Gallery from '../components/Gallery.astro';
+---
+
+<BaseLayout>
+  <div role='main' class='mb-12'>
+    <Gallery
+      globber={() =>
+        Astro.glob('/public/assets/engagement/*.{jpg,jpeg,png,webp}')}
+    />
+  </div>
+</BaseLayout>

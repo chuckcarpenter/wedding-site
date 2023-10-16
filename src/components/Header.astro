@@ -1,0 +1,98 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<div id="headerWrapper">
+  <header id="header">
+    <div id="headerInfo">
+      <h1
+        class="logo site-title"
+        data-shrink-original-size="80"
+        style="letter-spacing: 0.125em;"
+      >
+        <a
+          href="/"
+          title="Sarah & Chuck"
+          role="heading"
+          data-content-field="site-title"
+        >
+          <span class="placed-site-title">Sarah &amp; Chuck</span>
+        </a>
+      </h1>
+      <p
+        class="site-tagline"
+        data-content-field="site-tagline"
+        data-shrink-original-size="12"
+        style="letter-spacing: 0.833333333333333em;"
+      >
+        April 3, 2015 | Phoenix, Arizona
+      </p>
+
+      <div id="navBlock" role="navigation">
+        <nav class="main-nav" data-content-field="navigation">
+          <ul>
+            <li
+              class={currentPath === ""
+                ? "gallery-collection active-link"
+                : "gallery-collection"}
+            >
+              <a href="/">Home</a>
+            </li>
+            <li
+              class={currentPath === "engagement"
+                ? "gallery-collection active-link"
+                : "gallery-collection"}
+            >
+              <a href="engagement">Engagement</a>
+            </li>
+            <li
+              class={currentPath === "weekend"
+                ? "events-collection active-link"
+                : "events-collection"}
+            >
+              <a href="weekend">The Weekend</a>
+            </li>
+            <li
+              class={currentPath === "accomodations"
+                ? "page-collection active-link"
+                : "page-collection"}
+            >
+              <a href="accomodations">Accomodations</a>
+            </li>
+            <li
+              class={currentPath === "what"
+                ? "page-collection active-link"
+                : "page-collection"}
+            >
+              <a href="what">What to Do</a>
+            </li>
+          </ul>
+
+          <select id="mobileSelect" name="mobileSelect">
+            <option class="mobile-select-label" value="">Navigation</option>
+            <option class="gallery-collection" value="/" selected="selected"
+              >Home</option
+            >
+            <option class="gallery-collection" value="./engagement.html"
+              >Engagement</option
+            >
+            <option class="events-collection" value="./weekend.html"
+              >The Weekend</option
+            >
+            <option class="page-collection" value="./registry.html"
+              >Registry</option
+            >
+            <option class="page-collection" value="./accomodations.html"
+              >Accomodations</option
+            >
+            <option class="page-collection" value="./what.html"
+              >What to Do</option
+            >
+          </select>
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+<!-- / headerWrapper -->
