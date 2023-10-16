@@ -1,0 +1,61 @@
+---
+async function ImageFetcher(globber: Function) {
+  const files = await globber();
+  const images = await Promise.all(files);
+
+  images.sort((a, b) => b.default.width - a.default.width);
+
+  return images;
+}
+
+const { globber } = Astro.props;
+const imageFiles = await ImageFetcher(globber);
+---
+
+<section class='columns-3 gap-1'>
+  {
+    imageFiles.map((img, idx) => (
+      <>
+        <figure class='grid grid-rows-1 mb-8'>
+          <a class='image' href={`#image${idx}`}>
+            <img
+              src={img.default.src}
+              width={
+                img.default.width > 450
+                  ? img.default.width / 2
+                  : img.default.width
+              }
+              height={
+                img.default.width > 450
+                  ? img.default.height / 2
+                  : img.default.height
+              }
+              alt=''
+            />
+          </a>
+        </figure>
+
+        <figure
+          class='bg-zinc-500/75 hidden opacity-0 transition-opacity fixed inset-0 target:flex target:opacity-100'
+          id={`image${idx}`}
+        >
+          <img
+            src={img.default.src}
+            width={img.default.width}
+            height={img.default.height}
+            alt=''
+            class='ml-auto self-center'
+          />
+          <button
+            class='btn bg-pink-200 font-bold py-2 px-4 rounded ml-auto mr-2 mt-2 self-baseline hover:bg-pink-700 hover:text-white'
+            onclick="
+            window.location.hash = '';
+            "
+          >
+            Close Image
+          </button>
+        </figure>
+      </>
+    ))
+  }
+</section>

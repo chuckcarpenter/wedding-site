@@ -14,16 +14,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.5",
-    "astro": "^2.2.0"
+    "astro": "^3.0.0",
+    "glob": "^10.3.10"
   },
   "devDependencies": {
-    "pnpm": "^8.1.1",
-    "prettier": "^2.8.7",
-    "prettier-plugin-astro": "^0.8.0",
-    "unocss": "^0.51.4"
-  },
-  "engines": {
-    "node": "19.x.x"
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "unocss": "^0.56.5"
   }
 }
